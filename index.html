@@ -1,0 +1,305 @@
+<!-- Google Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+  #gpt-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #gpt-popup-box {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  #gpt-popup-box img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  #gpt-popup-message {
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .gpt-popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .gpt-button {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 15px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  .gpt-button:hover {
+    background: #1565c0;
+  }
+
+  #gpt-popup-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+  }
+
+  #gpt-popup-close:hover {
+    color: #f44336;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 500px) {
+    #gpt-popup-message {
+      font-size: 14px;
+    }
+    .gpt-button {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<!-- পপআপ HTML -->
+<div id="gpt-popup-overlay">
+  <div id="gpt-popup-box">
+    <span id="gpt-popup-close" class="material-icons">close</span>
+    <img src="https://i.postimg.cc/Hs5c33Nw/product-quality-concept-illustration-114360-7301.webp" alt="AI Banner">
+    <div id="gpt-popup-message">
+      <strong style="font-size: 16px;">📣 প্রিয় গ্রাহক!</strong><br><br>
+      <span class="material-icons" style="vertical-align: middle; color: #fbc02d;">tips_and_updates</span>
+      <strong>GPT VERSION 2.0</strong> হলো আপনার উপার্জনের এক আধুনিক মাধ্যম, <br>
+      যা <span class="material-icons" style="font-size:16px; color:#43a047;">auto_graph</span>
+      <strong>১০০% AI-বেসড অ্যানালাইসিস</strong> এর মাধ্যমে নির্ভুল সিগনাল প্রদান করে।<br><br>
+      <span class="material-icons" style="vertical-align: middle; color: #ff5722;">rocket_launch</span>
+      আজই যুক্ত হোন এবং স্মার্ট আয় শুরু করুন — দেরি না করে এখনই নিচের অপশন থেকে একটিতে ক্লিক করুন!
+    </div>
+    <div class="gpt-popup-buttons">
+      <a href="https://invest-sure.netlify.app" class="gpt-button" target="_blank">
+        <span class="material-icons">language</span> JOIN WEB
+      </a>
+      <a href="https://t.me/investbot" class="gpt-button" target="_blank">
+        <span class="material-icons">smart_toy</span> JOIN BOT
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- JS: ৫ সেকেন্ড পর পপআপ দেখানো এবং বন্ধ করার ব্যবস্থা -->
+<script>
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.getElementById('gpt-popup-overlay').style.display = 'flex';
+    }, 5000);
+  });
+
+  document.getElementById("gpt-popup-close").addEventListener("click", function () {
+    document.getElementById("gpt-popup-overlay").style.display = "none";
+  });
+</script>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT Version 2.0 Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1c1f2b, #383a59);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+header img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #00ffd5;
+}
+
+.status-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.status-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.status-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.status-card i {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #00e6ff;
+}
+
+.status-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.status-card p {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00ffd5;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #cccccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .status-card h3 {
+    font-size: 18px;
+  }
+
+  .status-card p {
+    font-size: 26px;
+  }
+}
+
+  </style>
+</head><body>
+  <header>
+    <img src="https://i.postimg.cc/BbX28X1g/medium-shot-young-people-with-reviews-23-2149394417.webp" alt="GPT Banner" />
+    <h1><i class="fas fa-robot"></i> GPT VERSION 2.0 STATUS</h1>
+  </header>  <section class="status-section">
+    <div class="status-card">
+      <i class="fas fa-users"></i>
+      <h3>GPT TOTALLY USER</h3>
+      <p id="total-users">0</p>
+    </div>
+    <div class="status-card">
+      <i class="fas fa-user-clock"></i>
+      <h3>GPT TODAY ACTIVE USER</h3>
+      <p id="active-users">0</p>
+    </div>
+    <div class="status-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>GPT TODAY PROFIT</h3>
+      <p id="today-profit">৳0.00</p>
+    </div>
+    <div class="status-card">
+      <i class="fas fa-check-circle"></i>
+      <h3>GPT BOT STATUS</h3>
+      <p>100% Operational</p>
+    </div>
+  </section>  <footer>
+    GPT VERSION 2.0 | POWERED BY MOD-X BD
+  </footer>  <script>
+    function animateCounter(id, end, duration, isCurrency = false) {
+      const el = document.getElementById(id);
+      let current = 0;
+      const stepTime = Math.abs(Math.floor(duration / end));
+
+      const timer = setInterval(() => {
+        current++;
+        el.innerText = isCurrency ? `৳${current.toLocaleString()}` : current.toLocaleString();
+        if (current >= end) clearInterval(timer);
+      }, stepTime);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      animateCounter("total-users", 2300, 5000);
+      animateCounter("active-users", 1745, 4000);
+      animateCounter("today-profit", 50500, 1, true);
+    });
+  </script></body></html>
